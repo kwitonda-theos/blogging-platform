@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="theme-color" content="#171717">
+	<title>Field Notes | A quiet place to write</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+	<div class="grain" aria-hidden="true"></div>
+	<header class="topbar">
+		<a class="wordmark" href="/"><span class="wordmark-mark">FN</span><span>field notes</span></a>
+		<div class="topbar-meta"><span class="status-dot"></span><span id="post-count-label">Your personal archive</span></div>
+		<button class="button button-primary button-new" id="new-post-button" type="button"><span class="plus">+</span> New note</button>
+	</header>
+	<main class="shell">
+		<section class="intro reveal"><div><p class="eyebrow">The writing desk</p><h1>Ideas worth<br><em>keeping.</em></h1></div><p class="intro-copy">A considered home for the things you notice, learn, and want to remember.</p></section>
+		<section class="toolbar reveal"><label class="search-box"><span class="search-icon">⌕</span><input id="search-input" type="search" placeholder="Search your notes..." autocomplete="off"><kbd>/</kbd></label><div class="category-filter" id="category-filter" role="tablist"></div></section>
+		<section class="featured-wrap reveal" id="featured-wrap" aria-live="polite"></section>
+		<section class="notes-header reveal"><div><p class="eyebrow">Your library</p><h2>Recent notes</h2></div><span class="notes-count" id="notes-count">0 notes</span></section>
+		<section class="notes-grid" id="notes-grid" aria-live="polite"></section>
+		<div class="empty-state" id="empty-state" hidden><div class="empty-icon">✦</div><h2>No notes here yet.</h2><p>Start with a thought you want to return to.</p><button class="button button-primary" id="empty-new-button" type="button">Write your first note</button></div>
+	</main>
+	<div class="toast" id="toast" role="status"></div>
+	<div class="modal-backdrop" id="view-backdrop" hidden><article class="view-modal" role="dialog" aria-modal="true" aria-labelledby="view-title"><button class="icon-button close-button" id="close-view" type="button" aria-label="Close note">×</button><p class="eyebrow" id="view-category">Note</p><h2 id="view-title"></h2><div class="view-meta" id="view-meta"></div><div class="view-content" id="view-content"></div><div class="view-tags" id="view-tags"></div></article></div>
+	<div class="modal-backdrop" id="modal-backdrop" hidden><section class="editor-modal" role="dialog" aria-modal="true" aria-labelledby="editor-title"><button class="icon-button close-button" id="close-editor" type="button" aria-label="Close editor">×</button><div class="editor-heading"><p class="eyebrow" id="editor-eyebrow">New entry</p><h2 id="editor-title">Put it into words.</h2><p>Make a note of something that matters.</p></div><form id="post-form"><input type="hidden" id="post-id"><label class="field-label">Title<input id="title-input" maxlength="255" required placeholder="Give your thought a name"></label><div class="field-row"><label class="field-label">Category<input id="category-input" maxlength="100" required placeholder="e.g. Ideas, Reading"></label><label class="field-label">Tags<span class="label-hint">comma separated</span><input id="tags-input" placeholder="design, life, work"></label></div><label class="field-label">Your note<textarea id="content-input" rows="8" required placeholder="Start writing..."></textarea></label><div class="form-footer"><span class="form-note">Saved to your archive</span><button class="button button-primary" id="save-button" type="submit">Save note <span>→</span></button></div></form></section></div>
+	<script src="/app.js" defer></script>
+</body>
+</html>
